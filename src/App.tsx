@@ -1,14 +1,11 @@
-import { useState } from 'react'
 import './App.css'
-import Home from './assets/paginas/home/Home'
-import Footer from './assets/paginas/footer/footer'
-
+import Home from './assets/components/home/Home'
+import Footer from './assets/components/footer/footer'
+import Navbar from './assets/components/navBar/NavBar'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-
+      <Navbar />
       <Home />
       <Footer />
 
