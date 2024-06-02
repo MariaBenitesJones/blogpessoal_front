@@ -1,22 +1,24 @@
 import './App.css';
 
-import Navbar from './assets/components/navbar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Cadastro from './assets/pages/cadastro/Cadastro';
-import Home from './assets/pages/home/Home';
-import Footer from './assets/components/footer/footer';
-import Login from './assets/pages/login/login';
-import ListaTemas from './assets/components/temas/listatemas/ListaTemas';
-import DeletarTema from './assets/components/temas/deletartema/DeletarTema';
-import FormTema from './assets/components/temas/formulariotema/FormTema';
-import ListaPostagens from './assets/components/postagens/listapostagens/ListaPostagens';
-import FormPostagem from './assets/components/postagens/formpostagem/FormPostagem';
-import DeletarPostagem from './assets/components/postagens/deletarpostagem/DeletarPostagem';
-import Perfil from './assets/pages/perfil/Perfil';
+import Cadastro from './pages/cadastro/Cadastro';
+import Home from './pages/home/Home';
+import Footer from './components/footer/footer';
+import Login from './pages/login/login';
+import ListaTemas from './components/temas/listatemas/ListaTemas';
+import DeletarTema from './components/temas/deletartema/DeletarTema';
+import FormTema from './components/temas/formulariotema/FormTema';
+import ListaPostagens from './components/postagens/listapostagens/ListaPostagens';
+import FormPostagem from './components/postagens/formpostagem/FormPostagem';
+import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem';
+import Perfil from './pages/perfil/Perfil';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css'
+
+
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
     <AuthProvider>
       <ToastContainer />
         <BrowserRouter>
-          <Navbar />
+          <NavBar />
           <div className='min-h-[80vh]'>
             <Routes>
               <Route path="/" element={<Login />} />

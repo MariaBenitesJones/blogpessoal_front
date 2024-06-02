@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { RotatingLines } from 'react-loader-spinner';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import UsuarioLogin from '../../../models/UsuarioLogin';
-import { AuthContext } from '../../../contexts/AuthContext';
+import UsuarioLogin from '../../models/UsuarioLogin';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Login() {
     let navigate = useNavigate();

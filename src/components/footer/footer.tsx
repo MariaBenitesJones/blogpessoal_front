@@ -1,6 +1,6 @@
 import { EnvelopeSimple, GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 import { useContext } from 'react'
-import { AuthContext } from '../../../contexts/AuthContext'
+import { AuthContext } from '../../contexts/AuthContext'
 
 function Footer() {
 
