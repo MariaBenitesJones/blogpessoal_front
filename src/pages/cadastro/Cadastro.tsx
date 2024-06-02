@@ -57,7 +57,7 @@ function Cadastro() {
                 ToastAlerta('Usuário cadastrado com sucesso!', "sucesso");
 
             } catch (error) {
-                alert('Erro ao cadastrar o usuário!')
+                ToastAlerta('Erro ao cadastrar o usuário!', "erro")
             }
 
         } else {
