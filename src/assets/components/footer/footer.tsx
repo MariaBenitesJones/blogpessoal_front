@@ -1,4 +1,6 @@
-import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { EnvelopeSimple, GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { useContext } from 'react'
+import { AuthContext } from '../../../contexts/AuthContext'
 
 function Footer() {
 
@@ -7,8 +9,14 @@ function Footer() {
      */
     let data = new Date().getFullYear()
 
-    return (
-        <>
+
+    const { usuario } = useContext(AuthContext)
+
+
+    let footerComponent
+
+    if (usuario.token !== ""){
+        footerComponent = (
             <div className="flex justify-center bg-indigo-900 text-white">
                 <div className="container flex flex-col items-center py-4">
                     <p className='text-xl font-bold'>
@@ -16,52 +24,26 @@ function Footer() {
                     </p>
                     <p className='text-lg'>Acesse nossas redes sociais</p>
                     <div className='flex gap-2'>
-                        <a href="https://github.com/conteudoGeneration/" target="_blank">
+                        <a href="https://github.com/MariaBenitesJones" target="_blank">
                             <GithubLogo size={48} weight='bold' />
                         </a>
-                        <a href="https://www.linkedin.com/school/generationbrasil" target="_blank">
+                        <a href="mailto:maria.eduarda.benites.jones@gmail.com" target="_blank">
+                            <EnvelopeSimple size={48}  weight='bold' />
+                        </a>
+                        <a href="https://www.linkedin.com/in/maria-eduarda-jones/" target="_blank">
                             <LinkedinLogo size={48} weight='bold' />
-                        </a>
-                        <a href="https://www.instagram.com/generationbrasil" target="_blank">
-                            <InstagramLogo size={48} weight='bold' />
-                        </a>
-                        <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                            <FacebookLogo size={48} weight='bold' />
                         </a>
                     </div>
                 </div>
             </div>
+        )
+    }
+
+    return (
+        <>
+            {footerComponent}
         </>
     )
 }
 
 export default Footer
-
-// import { GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
-// import { AuthContext } from '../../../contexts/AuthContext'
-
-// const { usuario, handleLogout } = useContext(AuthContext)
-
-// let footerComponent
-
-// let data = new Date().getFullYear()
-
-// function Footer() {
-//     return (
-//         <>
-//             <div className="flex justify-center bg-indigo-900 text-white">
-//                 <div className="container flex flex-col items-center py-4">
-//                     <p className='text-xl font-bold'>Blog pessoal Maria Eduarda Benites Jones | Copyright: 2024 </p>
-//                     <p className='text-lg'>Acesse nossas redes sociais</p>
-//                     <div className='flex gap-2'>
-//                         <a href="https://www.linkedin.com/in/maria-eduarda-jones/"><LinkedinLogo size={48} weight='bold' /></a>
-//                         <GithubLogo size={48} weight='bold' />
-//                         <InstagramLogo size={48} weight='bold' />
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
-
-// export default Footer

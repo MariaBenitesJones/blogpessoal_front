@@ -5,6 +5,7 @@ import CardTemas from "../cardtemas/CardTemas";
 import Tema from "../../../../models/Tema";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import { buscar } from "../../../../services/Service";
+import { ToastAlerta } from "../../../../utils/ToastAlerta";
 
 function ListaTemas() {
 
@@ -23,7 +24,7 @@ function ListaTemas() {
             })
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou!')
+                ToastAlerta('O token expirou!', "info")
                 handleLogout()
             }
         }
